@@ -2,5 +2,5 @@ package ua.lviv.iot.athletics.models;
 
 public enum RunType {
 
-    SPRINTER, MIDDLE, LONG
+    SPRINTER, MIDDLE, LONG, DEFAULT
 }
