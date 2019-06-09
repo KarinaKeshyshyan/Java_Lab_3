@@ -1,5 +1,9 @@
 package ua.lviv.iot.athletics.models;
 
+import javax.persistence.*;
+
+@Entity
+@Inheritance
 public class Run extends Athletics {
 
     private RunType kindOfRun;
@@ -22,6 +26,20 @@ public class Run extends Athletics {
         this.kindOfRun = kindOfRun;
         this.time = time;
         this.speed = speed;
+    }
+
+    public String getHeaders() {
+        return super.getHeaders()
+                + ", kindOfRun"
+                + ", time"
+                + ", speed";
+    }
+
+    public String toCSV() {
+        return super.toCSV()
+                + ", " + kindOfRun
+                + ", " + time
+                + ", " + speed;
     }
 
     public RunType getKindOfRun() {
